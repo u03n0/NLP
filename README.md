@@ -23,7 +23,7 @@ Jupyter notebooks are provided to break down code into smaller parts with explan
 | Topic | Model | Python | C++ |
 | --- | --- | --- | -- |
 | Word Embeddings ||||
-| | TF-IDF |✅| 🔨 |
+| | TF-IDF |✅|✅|
 | | Count Vector |📆 | 📆 |
 | | Co Occurrence Matrix | 📆 | 📆 |
 | | Word2Vec | 📆 | 📆 |
