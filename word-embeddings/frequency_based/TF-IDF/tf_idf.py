@@ -11,7 +11,7 @@ def tf(d: str, t: str)-> float:
     """
     n_terms: int = len(d.split()) # Amount of terms in 'd'.
     freq: int = d.count(t) # Frequency of term 't' in 'd'.
-    return freq / n_terms if n_terms else 0.0
+    return freq / n_terms if freq else 0.0
 
 
 
@@ -35,9 +35,11 @@ def tf_idf(D: list[str], V: set[str])-> np.array:
     idfs: dict = {}
     tfs = defaultdict(dict)
 
+    for term in V:
+        idfs[term] = idf(D, term)
+        
     for idx, d in enumerate(D):
         for term in V:
-            idfs[term] = idf(D, term) # Store idf of term in corpus
             tfs[idx][term] = tf(d, term) # Store tf of term in document
             
     array = np.zeros((len(D), len(V))) # Initialize array with zeros: shape (|D|, |V|)
@@ -47,7 +49,7 @@ def tf_idf(D: list[str], V: set[str])-> np.array:
     return array
 
 
-class Tfidf():
+class Tfidf:
     """ TF-IDF model
     """
 
