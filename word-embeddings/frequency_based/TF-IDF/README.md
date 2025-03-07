@@ -16,5 +16,6 @@ A **term** is a word (sub string) in a document (string). Ex: `"The cat chased t
 
 ## TF (Term Frequency)
 The **term frequency** measures how often a term appears in a document. This operation runs on a document level, that is to say, it takes in a document *d* and counts the occurrences of term *t* within that single document.
+![image.png](../../../images/tf.png)
 ## IDF (Inverse Document Frequency)
 The **idf** works on a corpus level, that is to say, a corpus *D* is passed in, along with a term *t*. The **term** is search for in every document *d* within the corpus *D*, counting how many documents contain the term. For example, the term *cat* appears in only one document (the first sentence) in `mylist`, but *the* appears in all documents (both sentences) in `mylist` (corpus). A term that is found in nearly all documents within a corpus is probably a very common word like: the, a, an, etc. While a word hardly found in a handful of documents like "stethoscope" has more importance, therefore, IDF favors, gives more weight to infrequent terms. These infrequent terms play a larger role in the meaning of a sentence (document). 
